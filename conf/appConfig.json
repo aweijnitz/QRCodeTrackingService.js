@@ -1,0 +1,11 @@
+{
+    "app": {
+        "webroot": "public",
+        "db": {
+            "filename": "./dbfiles/testdb"
+        }
+    },
+    "server": {
+        "port": 8080
+    }
+}

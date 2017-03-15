@@ -1,0 +1,35 @@
+{
+  "name": "qrcodetrackingservice.js",
+  "description": "An Express4 server that generates qr codes and tracks the codes in a database.",
+  "version": "0.9.0",
+  "private": false,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha -R spec",
+    "testIntegration": "mocha -R spec ./test/integration/*js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "keywords": [
+    "Express4"
+  ],
+  "author": "Anders Weijnitz",
+  "dependencies": {
+    "express": "~4.14.1",
+    "formidable": "^1.0.15",
+    "hjs": "~0.0.6",
+    "hogan.js": "^3.0.2",
+    "log4js": "^0.6.16",
+    "promised-io": "^0.3.4",
+    "qr-image": "^3.2.0",
+    "sqlite": "^2.3.0",
+    "static-favicon": "~1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.4",
+    "should": "^4.0.4",
+    "superagent": "^0.18.2"
+  }
+}
