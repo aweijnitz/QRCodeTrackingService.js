@@ -6,16 +6,6 @@ var qr = require('qr-image');
 
 
 /**
- * Private helper to sanity check a string before using it.
- * @param str
- * @returns {boolean}
- */
-var isDefined = function (str) {
-    return (typeof str != 'undefined' && null != str && '' != str);
-}
-
-
-/**
  * Public. Generate QR Code with given content and stream back to client.
  * @param req
  * @param res

@@ -11,7 +11,7 @@ var mockLogger = {
     }
 };
 
-var addUser = require('../lib/addUser')({}, mockLogger);
+var addUser = require('../lib/addUserDB')({}, mockLogger);
 var db = new sqlite3.Database(':memory:');
 db.serialize(); // put db in serialized mode, since we need predictability and repeatability
 

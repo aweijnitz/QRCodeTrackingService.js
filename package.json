@@ -18,12 +18,14 @@
   "author": "Anders Weijnitz",
   "dependencies": {
     "express": "~4.14.1",
+    "express-throttle": "^2.0.0",
     "formidable": "^1.0.15",
     "hjs": "~0.0.6",
     "hogan.js": "^3.0.2",
     "log4js": "^0.6.16",
     "promised-io": "^0.3.4",
     "qr-image": "^3.2.0",
+    "sql-injection": "0.0.5",
     "sqlite": "^2.3.0",
     "static-favicon": "~1.0.0"
   },

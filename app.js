@@ -4,6 +4,7 @@ var path = require('path');
 var favicon = require('static-favicon');
 var util = require('util');
 var sqlite3 = require('sqlite3');
+var sqlinjection = require('sql-injection');
 
 
 var log4js = require('log4js');
@@ -24,6 +25,12 @@ var setupServer = function setupServer(appConf, logger) {
     db.serialize(function createTableIfNotExists() {
         db.run("CREATE TABLE if not exists signups (name TEXT, date DATETIME, code CHARACTER(32), scanned BOOLEAN)");
     });
+
+    logger.info('Adding middleware');
+    app.configure(function() {
+        app.use(sqlinjection);  // add sql-injection middleware here
+    });
+
 
     logger.info('Configuring view engine');
     app.set('views', path.join(__dirname, 'views'));
