@@ -27,11 +27,13 @@ var setupServer = function setupServer(appConf, logger) {
     });
 
     logger.info('Adding middleware');
+    // Add basic protecion and sanity
     app.use(helmet({
         noCache: true
     }));
+    // Protect against SQL injection
     app.configure(function() {
-        app.use(sqlinjection);  // add sql-injection middleware here
+        app.use(sqlinjection);
     });
 
 

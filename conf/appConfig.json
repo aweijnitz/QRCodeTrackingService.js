@@ -3,7 +3,8 @@
         "webroot": "public",
         "db": {
             "filename": "./dbfiles/testdb"
-        }
+        },
+        "baseUrl": "freebeer.nighthack.it"
     },
     "server": {
         "port": 8080
