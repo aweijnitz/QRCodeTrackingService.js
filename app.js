@@ -5,7 +5,7 @@ var favicon = require('static-favicon');
 var util = require('util');
 var sqlite3 = require('sqlite3');
 var sqlinjection = require('sql-injection');
-
+var helmet = require('helmet');
 
 var log4js = require('log4js');
 log4js.configure('./conf/log4js.json');
@@ -27,6 +27,9 @@ var setupServer = function setupServer(appConf, logger) {
     });
 
     logger.info('Adding middleware');
+    app.use(helmet({
+        noCache: true
+    }));
     app.configure(function() {
         app.use(sqlinjection);  // add sql-injection middleware here
     });
