@@ -10,7 +10,7 @@ var shutdownHook = require('../lib/server/shutdownHook')(appConf, log4js);
 
 logger.info('Preparing server start.');
 
-var app = require('../app');
+var app = require('../app')(appConf, log4js);
 
 
 var exitWithError = function (code, msg) {

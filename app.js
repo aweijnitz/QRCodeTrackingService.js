@@ -9,10 +9,11 @@ var helmet = require('helmet');
 
 var log4js = require('log4js');
 log4js.configure('./conf/log4js.json');
-var logger = log4js.getLogger('app');
 
 
-var setupServer = function setupServer(appConf, logger) {
+var setupServer = function setupServer(appConf, log4js) {
+    var logger = log4js.getLogger('app');
+
     var app = express();
 
     logger.info('Configuring server ');
@@ -32,10 +33,7 @@ var setupServer = function setupServer(appConf, logger) {
         noCache: true
     }));
     // Protect against SQL injection
-    app.configure(function() {
-        app.use(sqlinjection);
-    });
-
+    app.use(sqlinjection);
 
     logger.info('Configuring view engine');
     app.set('views', path.join(__dirname, 'views'));
@@ -95,4 +93,4 @@ var setupServer = function setupServer(appConf, logger) {
 };
 
 
-module.exports = setupServer(appConf, logger);
+module.exports = setupServer;

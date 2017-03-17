@@ -14,6 +14,7 @@ var qrCodeGenerator = require('./qrCodeGenerator.js')(appConf, log4js);
 var addUser = require('./addUser')(appConf, log4js);
 var getUser = require('./getUser')(appConf, log4js);
 var registerUser = require('./registerUser')(appConf, log4js);
+var activateUser = require('./activateUser')(appConf, log4js)
 
 // Remember, in Express 4, '/' is the root under which this route is mounted, so does not
 // necessarily correspond to the absolute root of the domain.
