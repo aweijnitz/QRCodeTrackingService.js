@@ -1,15 +1,7 @@
 var should = require('should');
 var util = require('util');
 var sqlite3 = require('sqlite3');
-var mockLogger = {
-    getLogger: function (loggerName) {
-        return {
-            info: function (str) {
-                console.log(str);
-            }
-        };
-    }
-};
+var mockLogger = require('./mocks/mockLogger');
 
 var addUser = require('../lib/addUserDB')({}, mockLogger);
 var db = new sqlite3.Database(':memory:');
