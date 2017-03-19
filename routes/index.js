@@ -39,6 +39,6 @@ router.get('/users/:name', throttle({ "rate": maxRequestRate }), getUser);
 //
 router.post('/register/:name', throttle({ "rate": maxRequestRate }), registerUser);
 
-router.get('/activations/:code', throttle({ "rate": maxRequestRate }), activateUser);
+router.get('/activate/:code', throttle({ "rate": maxRequestRate }), activateUser);
 
 module.exports = router;

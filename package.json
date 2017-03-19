@@ -33,7 +33,8 @@
   "devDependencies": {
     "mocha": "^1.21.4",
     "request": "^2.81.0",
-    "should": "^4.0.4",
+    "should": "^11.2",
+    "should-http": "^0.1.0",
     "superagent": "^0.18.2"
   }
 }

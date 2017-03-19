@@ -2,7 +2,7 @@
     "app": {
         "webroot": "public",
         "db": {
-            "filename": "./dbfiles/testdb"
+            "filename": "./dbfiles/test.db"
         },
         "baseUrl": "freebeer.nighthack.it"
     },
