@@ -64,8 +64,8 @@ describe('End to end tests (starts server!)', function () {
     });
 
 
-    /*
-    it('Should have POST /users', function (done) {
+
+    it('Should have POST /users/<name>', function (done) {
         request.post('http://127.0.0.1:' + conf.server.port + '/users/lars', function (err, response, body) {
             (!!err).should.be.false;
             (!!body).should.be.true;
@@ -74,6 +74,8 @@ describe('End to end tests (starts server!)', function () {
         });
     });
 
+
+    /*
 
     it('Should have POST /register', function (done) {
         request.post('http://127.0.0.1:' + conf.server.port + '/register/batman', function (err, response, body) {
@@ -84,7 +86,7 @@ describe('End to end tests (starts server!)', function () {
         });
     });
 
-    it('Should have POST /activate', function (done) {
+     it('Should have POST /activate', function (done) {
         request.post('http://127.0.0.1:' + conf.server.port + '/activate/hascodeofanders', function (err, response, body) {
             (!!err).should.be.false;
             (!!body).should.be.true;
