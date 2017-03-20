@@ -1,9 +1,8 @@
 # Project specific files
 uploadDir
 workdir
-dbfiles
 testdb.js
-
+*.db
 # Logs
 logs
 *.log
