@@ -29,8 +29,15 @@ First clone/save this repo
     mkdir logs
     mkdir dbfiles
 	npm install
+
+## Dev mode run
+Automatically restart on file change, using nodemon
+
+```npm run dev-start```
+
 ## Run
-	npm start
+	```npm start```
+
 ## Run tests
 	npm test
 	
