@@ -25,16 +25,15 @@ router.get('/', throttle({ "rate": maxRequestRate }), function(req, res) {
 });
 
 
-
 // Generate QR code with given content (passed as query param)
 //
 router.get('/qr', throttle({ "rate": maxRequestRate }), qrCodeGenerator);
 
 // Add user, but don't generate any QR code. Intended for scripted DB fill, etc.
 //
-//router.post('/users/:name', throttle({ "rate": maxRequestRate }), addUser);
-router.post('/users/:name', addUser);
+router.post('/users/:name', throttle({ "rate": maxRequestRate }), addUser);
 router.get('/users/:name', throttle({ "rate": maxRequestRate }), getUser);
+router.get('/users', throttle({ "rate": maxRequestRate }), getUser);
 
 // Register user and return QR code containing the activation key
 //
