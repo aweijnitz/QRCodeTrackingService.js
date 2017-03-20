@@ -32,7 +32,8 @@ router.get('/qr', throttle({ "rate": maxRequestRate }), qrCodeGenerator);
 
 // Add user, but don't generate any QR code. Intended for scripted DB fill, etc.
 //
-router.post('/users/:name', throttle({ "rate": maxRequestRate }), addUser);
+//router.post('/users/:name', throttle({ "rate": maxRequestRate }), addUser);
+router.post('/users/:name', addUser);
 router.get('/users/:name', throttle({ "rate": maxRequestRate }), getUser);
 
 // Register user and return QR code containing the activation key

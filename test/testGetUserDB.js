@@ -1,5 +1,7 @@
 var should = require('should');
+
 var util = require('util');
+var moment = require('moment');
 var sqlite3 = require('sqlite3');
 var mockLogger = require('./mocks/mockLogger');
 
@@ -11,9 +13,11 @@ describe('getUser', function () {
 
     before(function (done) {
         db.run("CREATE TABLE if not exists signups (name TEXT, date DATETIME, code CHARACTER(32), scanned BOOLEAN)");
-        db.run("INSERT INTO signups VALUES ('anders', " + (new Date()) + ", 'hascodeofanders', 0)",
-            function () {
-                done();
+        db.exec(
+            "INSERT INTO signups VALUES ('anders', date('now'), 'hascodeofanders', 0);"+
+            "INSERT INTO signups VALUES ('erik', date('now'), 'hascodeoflars', 0)",
+            function (err) {
+                done(err);
             });
     });
 
@@ -35,7 +39,7 @@ describe('getUser', function () {
         getUser(db, null, function (err, ok) {
             should.not.exist(err, 'Error invoking db');
             should.exist(ok);
-            ok.should.have.length(1);
+            ok.should.have.length(2);
             done(err);
         });
     });

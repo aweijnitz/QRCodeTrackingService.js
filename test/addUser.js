@@ -9,8 +9,11 @@ db.serialize(); // put db in serialized mode, since we need predictability and r
 
 describe('addUser', function () {
 
-    before(function () {
-        db.run("CREATE TABLE if not exists signups (name TEXT, date DATETIME, code CHARACTER(32), scanned BOOLEAN)");
+    before(function (done) {
+        db.exec("CREATE TABLE if not exists signups (name TEXT, date DATETIME, code CHARACTER(32), scanned BOOLEAN)",
+        function(err) {
+            done(err);
+        });
     });
 
     after(function () {
