@@ -7,6 +7,7 @@ var handleReq = function (appConf, log4js) {
 
     var addUserDB = require('../lib/addUserDB')(appConf, log4js);
 
+    // Add user to database and return a QR code with an activation URL
     return function addUser(req, res) {
         var name = req.params.name;
         if (isDefined(name)) {
