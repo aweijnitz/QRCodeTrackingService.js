@@ -89,27 +89,27 @@ describe('End to end tests (starts server!)', function () {
         });
     });
 
+     it('Should have GET /activate', function (done) {
+       request.get('http://127.0.0.1:' + conf.server.port + '/activate/hascodeofanders', function (err, response, bodyStr) {
+            response.statusCode.should.equal(200);
+            response.should.be.json();
+            should.exist(bodyStr);
+            var body = JSON.parse(bodyStr);
+            should.exist(body.msg, 'msg missing in response');
+         done(err);
+       });
+     });
 
-    /*
+
 
      it('Should have POST /register', function (done) {
-     request.post('http://127.0.0.1:' + conf.server.port + '/register/batman', function (err, response, body) {
-     (!!err).should.be.false;
-     (!!body).should.be.true;
-     response.statusCode.should.equal(200);
-     done(err);
-     });
-     });
-
-     it('Should have POST /activate', function (done) {
-     request.post('http://127.0.0.1:' + conf.server.port + '/activate/hascodeofanders', function (err, response, body) {
-     (!!err).should.be.false;
-     (!!body).should.be.true;
-     response.statusCode.should.equal(200);
-     done(err);
-     });
+         request.post('http://127.0.0.1:' + conf.server.port + '/register/batman', function (err, response, bodyStr) {
+            response.statusCode.should.equal(200);
+            should.exist(bodyStr);
+            done(err);
+        });
      });
 
-     */
+
 
 });
