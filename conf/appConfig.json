@@ -4,7 +4,7 @@
         "db": {
             "filename": "./dbfiles/test.db"
         },
-        "baseUrl": "freebeer.nighthack.it"
+        "baseUrl": "http://freebeer.nighthack.it"
     },
     "server": {
         "port": 8080

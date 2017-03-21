@@ -17,7 +17,7 @@ var handleReq = function (appConf, log4js) {
                         res.status(500).json({error: 'Could not add user!', cause: err});
                     else {
                         logger.info('Registered ' + name + ". Code:  " + activationCode);
-                        var url = 'http://' + appConf.app.baseUrl + '/activations/' + activationCode;
+                        var url = appConf.app.baseUrl + '/activations/' + activationCode;
                         var qr_svg = qr.image(url, {type: 'svg'});
 
                         res.type('svg');
