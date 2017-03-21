@@ -7,7 +7,7 @@ var throttle = require("express-throttle");
 var log4js = require('log4js');
 log4js.configure('./conf/log4js.json');
 var logger = log4js.getLogger("index");
-var maxRequestRate = "5/s";
+var maxRequestRate = "3/s";
 
 // Load route handlers (doubling as rudimentary MVC controllers)
 var qrCodeGenerator = require('./qrCodeGenerator.js')(appConf, log4js);
