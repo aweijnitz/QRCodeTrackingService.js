@@ -6,7 +6,8 @@ var sqlite3 = require('sqlite3');
 var mockLogger = require('./mocks/mockLogger');
 
 var getUser = require('../lib/getUserDB')({}, mockLogger);
-var db = new sqlite3.Database('./test/dbfiles/getuser.db');
+//var db = new sqlite3.Database('./test/dbfiles/getuser.db');
+var db = new sqlite3.Database(':memory:');
 db.serialize(); // put db in serialized mode, since we need predictability and repeatability
 
 describe('getUser', function () {
@@ -22,8 +23,8 @@ describe('getUser', function () {
     });
 
     after(function () {
-        db.run("DROP TABLE signups");
-        db.close();
+        db.exec("DROP TABLE signups");
+        //db.close();
     });
 
     it('Should get named user from database', function (done) {
