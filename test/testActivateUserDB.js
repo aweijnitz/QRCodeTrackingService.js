@@ -1,5 +1,4 @@
 var should = require('should');
-var util = require('util');
 var sqlite3 = require('sqlite3');
 var mockLogger = require('./mocks/mockLogger');
 
