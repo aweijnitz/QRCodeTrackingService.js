@@ -7,6 +7,9 @@ var request = require('request');
 var log4js = require('log4js');
 var fs = require('fs');
 
+//log4js.setGlobalLogLevel("ERROR");
+
+
 var conf = {
     "app": {
         "webroot": "public",
@@ -21,7 +24,7 @@ var conf = {
 };
 
 
-var app = require('../app')(conf, log4js);
+var app = require('../../app')(conf, log4js);
 
 describe('End to end tests (starts server!)', function () {
     var server = null;

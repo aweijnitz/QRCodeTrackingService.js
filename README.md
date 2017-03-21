@@ -39,5 +39,9 @@ Automatically restart on file change, using nodemon
 	```npm start```
 
 ## Run tests
-	npm test
+	```npm test```
+
+### Integration tests
+	```npm run e2e```
+
 	

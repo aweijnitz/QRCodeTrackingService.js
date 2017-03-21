@@ -7,7 +7,7 @@
     "start": "node ./bin/www",
     "dev-start": "./node_modules/nodemon/bin/nodemon.js ./bin/www",
     "test": "mocha -R spec",
-    "testIntegration": "mocha -R spec ./test/integration/*js"
+    "e2e": "mocha -R spec ./test/integration/*js"
   },
   "repository": {
     "type": "git",
