@@ -13,7 +13,7 @@ var handleReq = function (appConf, log4js) {
 
         getUserDB(req.app.locals.db, name,
             function getUserCallback(err, result) {
-            logger.debug(result);
+            //logger.debug(result);
                 if (err)
                     res.status(500).json({error: 'Could not get user!', cause: err});
                 else
