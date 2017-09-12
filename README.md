@@ -20,7 +20,7 @@ The location of the databse is configurable. See the ```./config``` folder.
 - Built in form parsing with Formidable
     * Example includes file upload form
 - Example test cases 
-    * Using [Mocha](http://visionmedia.github.io/mocha/) and [Should](https://github.com/visionmedia/should.js/)
+    * Using [Mocha](http://mochajs.org/) and [Should](https://github.com/visionmedia/should.js/)
 
 ## Install
 First clone/save this repo
